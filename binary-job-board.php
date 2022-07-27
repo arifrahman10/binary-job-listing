@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Binary Job Listing
-Plugin URI: https://tutsplus.com/
-Description: Plugin to accompany tutsplus guide to creating plugins, registers a post type.
+Plugin URI:
+Description:
 Version: 1.0.0
 Author: Arif Rahman
-Author URI: https://rachelmccollin.com/
+Author URI:
 License: GPLv2 or later
 Text Domain: binary-job-listing
 */
