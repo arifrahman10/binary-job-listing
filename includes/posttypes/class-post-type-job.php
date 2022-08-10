@@ -28,11 +28,21 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
          */
         public function __construct() {
 
-            // Add Hook into the 'init()' action
+            // Register the post type
             add_action('init', [$this, 'binary_job_listing_init'], 10);
+
+            // Admin set post columns
+            //add_action('manage_edit-job_columns', [$this, 'binary_job_listing_set_'], 10);
+
+            // Add Filter to redirect Archive Page Template
+            add_filter('archive_template', [$this, 'get_binary_job_listing_archive_template'], 20);
+
+            // Add Filter to redirect Single Page Template
+            add_filter('single_template', [$this, 'get_binary_job_listing_single_template'], 20);
+
         }
 
-
+        // Custom Post Type Register
         public function binary_job_listing_init() {
 
             $labels = array(
@@ -64,7 +74,7 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
                 'show_in_menu'          => true,
                 'query_var'             => true,
                 'rewrite'               => array( 'slug' => 'job' ),
-                'capability_type'       => 'post',  
+                'capability_type'       => 'post',
                 'has_archive'           => true,
                 'hierarchical'          => true,
                 'menu_position'         => 8,
@@ -125,6 +135,22 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
 
         }
 
+
+        // Job Archive Page Job Listing
+        public function get_binary_job_listing_archive_template( $archive_template ){
+            if ( is_post_type_archive ( 'job' ) ) {
+                $archive_template = BINARY_JOB_LISTING_DIR_PATH . 'templates/archive-content.php';
+            }
+            return $archive_template;
+        }
+
+        // Job Single Job Listing
+        public function get_binary_job_listing_single_template($single_template) {
+            if ( is_singular('job') ) {
+                $single_template = BINARY_JOB_LISTING_DIR_PATH . '/templates/single-content.php';
+            }
+            return $single_template;
+        }
 
 
     }
