@@ -30,7 +30,6 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
             add_action('init', [$this, 'binary_job_listing_init'], 10);
 
             // Admin set post columns
-            //add_action('manage_edit-job_columns', [$this, 'binary_job_listing_set_column'], 10);
             add_action('manage_edit-job_columns', [$this, 'binary_job_listing_set_column'], 12, 1);
 
             // Add Filter to redirect Archive Page Template
@@ -40,7 +39,7 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
             add_filter('single_template', [$this, 'get_binary_job_listing_single_template'], 20);
 
             //
-            add_filter('post_row_actions', [$this, 'binary_job_listing_action_id_links'] );
+            add_filter('post_row_actions', [$this, 'binary_job_listing_action_id_links'], 10, 2 );
 
         }
 
@@ -83,7 +82,7 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
                 'supports'              => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', 'permalinks', 'page-attributes' ),
                 'yarpp_support'         => true,
                 'menu_icon'             => 'dashicons-book',
-                'show_admin_column' => true,
+                'show_admin_column'     => true,
 
             );
 
@@ -152,21 +151,11 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
 
         public function binary_job_listing_action_id_links( $actions, $post ) {
 
-
-
-            if ($post->post_type == 'job')
-            {
+            if ($post->post_type == 'job') {
                 $actions['duplicate'] = '<a href="#" title="" rel="permalink">Duplicate</a>';
             }
-
-            echo "<pre>";
-            print_r($actions);
-            echo "</pre>";
-
             return $actions;
-
         }
-
 
         // Job Archive Page Job Listing
         public function get_binary_job_listing_archive_template( $archive_template ){

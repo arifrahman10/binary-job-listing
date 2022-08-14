@@ -29,6 +29,7 @@ if ( !defined('BINARY_JOB_LISTING_DIR_VEND') ) {
 }
 
 
+
 if ( !class_exists('Binary_Job_Listing') ) {
 
     class Binary_Job_Listing {
@@ -99,5 +100,3 @@ if ( !function_exists('binary_job_listing_load') ) {
     binary_job_listing_load();
 
 }
-
-
