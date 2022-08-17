@@ -73,7 +73,7 @@ if ( !class_exists('Binary_Job_Listing') ) {
 
             // Initialize Job post Class
             if ( class_exists('Binary_Job_Listing_Scripts') ) {
-                new Binary_Job_Listing_Scripts();
+                new Binary_Job_Listing\Scripts();
             }
 
         }

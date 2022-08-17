@@ -1,6 +1,8 @@
 <?php
+namespace Binary_Job_Listing;
 
-class Binary_Job_Listing_Scripts {
+
+class Scripts {
 
     public function __construct() {
 
@@ -14,9 +16,10 @@ class Binary_Job_Listing_Scripts {
     public function binary_job_listing_enqueue_scripts() {
 
         wp_enqueue_style('bootstrap', BINARY_JOB_LISTING_DIR_VEND . '/bootstrap/css/bootstrap.css');
-        wp_enqueue_style('binary-job-listing-style', BINARY_JOB_LISTING_DIR_CSS . '/style.css');
+        wp_enqueue_style('binary-job-listing-style', BINARY_JOB_LISTING_DIR_CSS . '/style.min.css');
 
     }
 
-
 }
+
+$script = new Scripts();

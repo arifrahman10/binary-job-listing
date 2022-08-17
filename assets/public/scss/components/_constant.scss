@@ -1,0 +1,23 @@
+$primary-color: #0050b2;
+$secondary-color: #171d24;
+$body-color: #6a737c;
+
+$body-font-weight: 400;
+$font-weight-500: 500;
+$font-weight-600: 600;
+$font-weight-700: 700;
+
+$body-font-family: "Roboto", sans-serif;
+
+:root {
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --body-color: #{$body-color};
+
+  --body-font-weight: #{$body-font-weight};
+  --font-weight-500: #{$font-weight-500};
+  --font-weight-600: #{$font-weight-600};
+  --font-weight-700: #{$font-weight-700};
+
+  --body-font-family: #{$body-font-family};
+}
