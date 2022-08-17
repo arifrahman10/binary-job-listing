@@ -1,0 +1,32 @@
+{
+  "name": "binary-job-listing",
+  "version": "1.0.0",
+  "description": "Binary Job Listing is a lightweight job listing plugin for adding job post like functionality to your WordPress site. Being shortcode based, it can work with any theme (given a bit of CSS styling) and is really simple to setup.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arifrahman10/binary-job-listing.git"
+  },
+  "keywords": [
+    "Job",
+    "Board",
+    "Job",
+    "Post",
+    "Job",
+    "List",
+    "Job",
+    "Listing"
+  ],
+  "author": "Arif Rahman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arifrahman10/binary-job-listing/issues"
+  },
+  "homepage": "https://github.com/arifrahman10/binary-job-listing#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
