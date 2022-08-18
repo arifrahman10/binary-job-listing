@@ -12,12 +12,12 @@ var rename = require("gulp-rename");
 
 const paths = {
     styles: {
-        src : 'assets/public/scss/**/*.scss',
-        dest: 'assets/public/css'
+        src : 'assets/scss/**/*.scss',
+        dest: 'assets/css'
     },
     scripts: {
-        src : 'assets/public/js/admin.js',
-        dest: 'assets/public/js'
+        src : 'assets/js/admin.js',
+        dest: 'assets/js'
     },
     package: {
         src : ['**/*', '!node_modules{,/**}', '!src{,/**}', '!packaged{,/**}'],
