@@ -1,5 +1,5 @@
 <?php
-namespace Binary_Job_Listing;
+namespace Binary_Job_Listing\Scripts;
 
 
 class Scripts {
@@ -22,4 +22,4 @@ class Scripts {
 
 }
 
-$script = new Scripts();
+new Scripts();

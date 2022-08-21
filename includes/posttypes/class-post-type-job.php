@@ -1,4 +1,6 @@
 <?php
+namespace Binary_Job_Listing;
+
 if (!defined('ABSPATH')) {
     exit;
 } // Exit if accessed directly
@@ -10,9 +12,9 @@ if (!defined('ABSPATH')) {
  *
  * @since       1.0.0
  *
- * @package     Simple_Job_Board
- * @subpackage  Simple_Job_Board/includes/posttypes
- * @author     PressTigers <support@presstigers.com>
+ * @package     Binary Job Listing
+ * @subpackage  Binary Job Listing/includes/posttypes
+ * @author     arifbb79@gmail.com
  */
 
 if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
@@ -176,3 +178,5 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
 
     }
 }
+
+new Binary_Job_Listing_Post_Type_Job();

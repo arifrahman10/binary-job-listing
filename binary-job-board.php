@@ -19,13 +19,13 @@ if ( !defined('BINARY_JOB_LISTING_DIR_PATH') ) {
     define ( 'BINARY_JOB_LISTING_DIR_PATH', plugin_dir_path( __FILE__ ) );
 }
 if ( !defined('BINARY_JOB_LISTING_DIR_CSS') ) {
-    define('BINARY_JOB_LISTING_DIR_CSS', plugins_url('/assets/public/css/', __FILE__) );
+    define('BINARY_JOB_LISTING_DIR_CSS', plugins_url('/assets/css/', __FILE__) );
 }
 if ( !defined('BINARY_JOB_LISTING_DIR_JS') ) {
-    define('BINARY_JOB_LISTING_DIR_JS', plugins_url('assets/public/js/', __FILE__) );
+    define('BINARY_JOB_LISTING_DIR_JS', plugins_url('assets/js/', __FILE__) );
 }
 if ( !defined('BINARY_JOB_LISTING_DIR_VEND') ) {
-    define('BINARY_JOB_LISTING_DIR_VEND', plugins_url('assets/public/vendors/', __FILE__) );
+    define('BINARY_JOB_LISTING_DIR_VEND', plugins_url('assets/vendors/', __FILE__) );
 }
 
 
@@ -60,21 +60,18 @@ if ( !class_exists('Binary_Job_Listing') ) {
              * Job post type file's path
              */
             require_once BINARY_JOB_LISTING_DIR_PATH . 'includes/posttypes/class-post-type-job.php';
-            // Initialize Job post Class
-            if ( class_exists('Binary_Job_Listing_Post_Type_Job') ) {
-                new Binary_Job_Listing_Post_Type_Job();
-            }
-
 
             /**
              * Register Enqueue Scripts
              */
             require BINARY_JOB_LISTING_DIR_PATH . 'includes/class-binary-job-listing-scripts.php';
 
-            // Initialize Job post Class
-            if ( class_exists('Binary_Job_Listing_Scripts') ) {
-                new Binary_Job_Listing\Scripts();
-            }
+
+            /**
+             * Binary Job Listing Helper Functions
+             */
+            require BINARY_JOB_LISTING_DIR_PATH . 'includes/class-helper-functions.php';
+
 
         }
 

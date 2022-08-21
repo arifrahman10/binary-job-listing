@@ -1,4 +1,11 @@
 <?php
+
+use Binary_Job_Listing\Helper;
+
+if (!defined('ABSPATH')) {
+    exit;
+} // Exit if accessed directly
+
 get_header();
 
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -20,7 +27,7 @@ $job_post = new \WP_Query( $args );
                     <?php
                     while ($job_post->have_posts()) : $job_post->the_post();
                         ?>
-                        <div class="single-job-post">
+                        <div class="job-list-content">
                             <div class="post-header">
                                 <div class="post-info">
                                     <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute() ?>">
@@ -29,9 +36,11 @@ $job_post = new \WP_Query( $args );
                                     <div class="post-meta">
                                         <div class="meta location">
                                             <i class="icon_pin_alt"></i>
-                                            NY, United States
+                                            <?php echo Helper::get_first_taxonomy('job-location') ?>
                                         </div>
-                                        <div class="meta category"><span>Branch Banking</span> | Full-time</div>
+                                        <div class="meta category"><span><?php echo Helper::get_first_taxonomy('job-category') ?></span> |
+                                            <?php echo Helper::get_first_taxonomy('job-type    ') ?>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="post-date">
