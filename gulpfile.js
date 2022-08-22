@@ -27,10 +27,8 @@ const paths = {
 
 function compress () {
     return src(paths.package.src)
-        .pipe(replace('saasland', 'saasland'))
-        .pipe(replace('SAASLAND', 'SAASLAND'))
-        .pipe(replace('Saasland', 'Saasland'))
-        .pipe(zip(`saasland.zip`))
+        .pipe(replace('binary-job-listing', 'binary-job-listing'))
+        .pipe(zip(`binary-job-listing.zip`))
         .pipe(dest(paths.package.dest))
 }
 

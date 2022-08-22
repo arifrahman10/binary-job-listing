@@ -1,14 +1,14 @@
-=== binary-job-listing ===
-
+=== Binary Job Listing - Simple Job Listing plugin to manage job post and apply form on your WordPress site ===
 Contributors: arifrahman1
-Tags: wpbeginner, plugin tutorial
+Tags: docs, documentation, document, knowledge base, knowledgebase, kb, easydocs, support, faq, faqs, wiki, helpdesk, table of content, documentation generator, support center, knowledge base builder
 Requires at least: 5.0
 Tested up to: 6.1
-Stable tag: 1.0.0
+Requires PHP: 7.4
+Stable tag: 0.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A WordPress plugin to teach beginners how to write a WordPress plugin.
+Binary Job listing is a simple job listing plugin to manage.
 
 == Description ==
 

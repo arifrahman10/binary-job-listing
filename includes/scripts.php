@@ -15,8 +15,8 @@ class Scripts {
     //Scripts Enqueue
     public function binary_job_listing_enqueue_scripts() {
 
-        wp_enqueue_style('bootstrap', BINARY_JOB_LISTING_DIR_VEND . '/bootstrap/css/bootstrap.css');
-        wp_enqueue_style('binary-job-listing-style', BINARY_JOB_LISTING_DIR_CSS . '/style.min.css');
+        wp_enqueue_style('bootstrap', BINARY_JOB_LISTING_DIR_VEND . 'bootstrap/css/bootstrap.css');
+        wp_enqueue_style('binary-job-listing-style', BINARY_JOB_LISTING_DIR_CSS . 'bjl-style.min.css');
 
     }
 
