@@ -20,7 +20,7 @@ const paths = {
         dest: 'assets/js'
     },
     package: {
-        src : ['**/*', '!node_modules{,/**}', '!src{,/**}', '!packaged{,/**}'],
+        src : ['**/*', '!node_modules{,/**}', '!src{,/**}', '!packaged{,/**}', '!assets/scss{,/**}'],
         dest: 'packaged'
     }
 };
