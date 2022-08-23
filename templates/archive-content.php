@@ -16,13 +16,11 @@ $args = [
 ];
 
 $job_post = new \WP_Query( $args );
-
 ?>
     <section class="binary-job-archive job-listing">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-
                     <!---------------------- Start Binary Job Listing Archive list ------------------------>
                     <?php
                     while ($job_post->have_posts()) : $job_post->the_post();
@@ -34,13 +32,27 @@ $job_post = new \WP_Query( $args );
                                         <?php the_title('<h2 class="job-title">', '</h2>') ?>
                                     </a>
                                     <div class="post-meta">
-                                        <div class="meta location">
-                                            <i class="icon_pin_alt"></i>
-                                            <?php echo Helper::get_first_taxonomy('job-location') ?>
-                                        </div>
-                                        <div class="meta category"><span><?php echo Helper::get_first_taxonomy('job-category') ?></span> |
-                                            <?php echo Helper::get_first_taxonomy('job-type    ') ?>
-                                        </div>
+                                        <?php
+                                        if ( !empty(Helper::get_first_taxonomy('job-location')) ) { ?>
+                                            <div class="meta location">
+                                                <i class="icon_pin_alt"></i>
+                                                <?php echo Helper::get_first_taxonomy('job-location') ?>
+                                            </div>
+                                            <?php
+                                        }
+                                        if ( !empty(Helper::get_first_taxonomy('job-category')) ) { ?>
+                                            <div class="meta category">
+                                                <?php echo Helper::get_first_taxonomy('job-category') ?>
+                                            </div>
+                                            <?php
+                                        }
+                                        if ( !empty(Helper::get_first_taxonomy('job-type')) ) { ?>
+                                            <div class="meta type">
+                                                | <?php echo Helper::get_first_taxonomy('job-type') ?>
+                                            </div>
+                                            <?php
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                                 <div class="post-date">
@@ -55,7 +67,6 @@ $job_post = new \WP_Query( $args );
                     endwhile;
                     wp_reset_postdata();
                     ?>
-
                     <!---------------------- Start Binary Job Listing Pagination ------------------------>
                     <div class="binary-job-listing-pagination">
                         <?php

@@ -69,9 +69,14 @@ a {
 }
 .job-listing .job-list-content .post-header .post-meta .location {
   color: #787880;
+  margin-right: 8px;
 }
 .job-listing .job-list-content .post-header .post-meta .category {
   color: var(--primary-color);
+  margin-right: 8px;
+}
+.job-listing .job-list-content .post-header .post-meta .type {
+  color: #787880;
 }
 .job-listing .job-list-content .post-header .post-date {
   color: #787880;

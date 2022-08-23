@@ -25,9 +25,14 @@
         }
         .location {
           color: #787880;
+          margin-right: 8px;
         }
         .category {
           color: var(--primary-color);
+          margin-right: 8px;
+        }
+        .type {
+          color: #787880;
         }
       }
       .post-date {
