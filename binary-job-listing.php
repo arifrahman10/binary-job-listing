@@ -1,7 +1,6 @@
 <?php
 /**
  * Plugin Name: Binary Job Listing
- * Plugin URI: https://profiles.wordpress.org/arifrahman1/
  * Description: Binary Job Listing is a clean and simple plugin to manage job post and apply form on your WordPress site.
  * Author: Arif Rahman
  * Version: 0.0.1
@@ -130,6 +129,12 @@ if ( !class_exists('Binary_Job_Listing') ) {
              * Job post type file's path
              */
             require_once BINARY_JOB_LISTING_DIR_PATH . 'includes/posttypes/class-post-type-job.php';
+
+
+            /**
+             * Job Post Type Dashboard "Settings" file's path
+             */
+            require_once BINARY_JOB_LISTING_DIR_PATH . 'includes/dashboard/settings.php';
 
             /**
              * Register Enqueue Scripts

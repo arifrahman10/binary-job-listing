@@ -1,6 +1,6 @@
 === Binary Job Listing - WordPress Clean and Modern Job Listing, Career Page  ===
 Contributors: arifrahman1
-Tags: Jobs, Career, Job Listing, Job Board, Careers Page, Job Portal
+Tags: jobs, career, job listing, job board, careers page, job Portal, job manager
 Requires at least: 5.0
 Tested up to: 6.1
 Requires PHP: 7.4

@@ -1,6 +1,8 @@
 <?php
 namespace Binary_Job_Listing;
 
+use Binary_Job_Listing\Admin_Submenu\Settings;
+
 if (!defined('ABSPATH')) {
     exit;
 } // Exit if accessed directly
@@ -22,9 +24,13 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
     class Binary_Job_Listing_Post_Type_Job {
 
         /**
+         * Autoload method
+         * @return void
          * Initialize the class and set its properties.
          *
          * @since 1.0.0
+         *
+         * @access public
          */
         public function __construct() {
 
@@ -143,7 +149,7 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
 
             $column = array_merge(
                 $column, array(
-                    'view_applicants' => esc_html__('Job Applications', 'simple-job-board'),
+                    'view_applicants' => esc_html__('Job Applications', 'binary-job-listing'),
                 )
             );
 
