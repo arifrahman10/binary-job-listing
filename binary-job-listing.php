@@ -157,7 +157,7 @@ if ( !class_exists('Binary_Job_Listing') ) {
 
 
 /**
- * @return binary_job_listing_load | false
+ * @return "binary_job_listing_load" | false
  */
 if ( !function_exists('binary_job_listing_load') ) {
 

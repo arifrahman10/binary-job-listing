@@ -10,7 +10,7 @@ class Settings {
         // Register Submenu Page "Settings" for Job listing
         add_action('admin_menu', [$this, 'binary_job_listing_settings_init'], 5, 1);
 
-        add_action('admin_init', [$this, 'binary_job_listing_settings_fields_register'], 10, 1);
+        //add_action('admin_init', [$this, 'binary_job_listing_settings_fields_register'], 10, 1);
 
     }
 
@@ -23,8 +23,64 @@ class Settings {
      */
     public function binary_job_listing_settings_init() {
 
-        add_submenu_page('edit.php?post_type=job', 'Job Post Settings', 'Settings', 'manage_options', 'job-settings', [$this, 'binary_job_listing_settings']);
+        add_submenu_page(
+            'edit.php?post_type=job',
+            esc_html__('Post Settings', 'binary-job-listing'),
+            esc_html__('Settings', 'binary-job-listing'),
+            'manage_options',
+            'job-settings',
+            [$this, 'binary_job_listing_settings']
+        );
     }
+
+    public function binary_job_listing_settings() {
+
+        // check user capabilities
+        if ( ! current_user_can( 'manage_options' ) ) {
+            return;
+        }
+        //Get the active tab from the $_GET param
+        $default_tab = null;
+        $tab = isset($_GET['tab']) ? $_GET['tab'] : $default_tab;
+        $is_general = $tab == 'general' ? 'nav-tab-active' : '';
+        $is_tools = $tab == 'tools' ? 'nav-tab-active' : '';
+        ?>
+        <!-- Our admin page content should all be inside .wrap -->
+        <div class="wrap">
+
+            <!-- Print the page title -->
+            <h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
+
+            <!-- Here are our tabs -->
+            <nav class="nav-tab-wrapper">
+                <a href="?post_type=job&page=job-settings&tab=general" class="nav-tab <?php echo esc_attr($is_general) ?>">
+                    <?php esc_html_e('General', 'binary-job-listing' ); ?>
+                </a>
+                <a href="?post_type=job&page=job-settings&tab=tools" class="nav-tab <?php echo esc_attr($is_tools) ?>">
+                    <?php esc_html_e('Tools', 'binary-job-listing' ); ?>
+                </a>
+            </nav>
+
+            <div class="tab-content">
+                <?php switch($tab) :
+                    case 'general':
+                        echo 'General'; //Put your HTML here
+                        break;
+                    case 'tools':
+                        echo 'Tools';
+                        break;
+                    default:
+                        echo 'Default tab';
+                        break;
+                endswitch; ?>
+            </div>
+
+
+        </div><!-- /.wrap -->
+        <?php
+
+    }
+
 
 
     /**
@@ -35,6 +91,11 @@ class Settings {
      * @access public
      */
     public function binary_job_listing_settings_fields_register() {
+
+        // check user capabilities
+        if ( ! current_user_can( 'manage_options' ) ) {
+            return;
+        }
 
         $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'first_tab';
 
@@ -76,50 +137,6 @@ class Settings {
         }
         //and so on...
 
-
-    }
-
-
-    public function binary_job_listing_settings() {
-
-        $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'first_tab';
-
-        ?>
-        <!-- Create a header in the default WordPress 'wrap' container -->
-        <div class="wrap">
-
-            <div id="icon-themes" class="icon32"></div>
-            <h2>This is My Sub-Menu Page</h2>
-            <?php settings_errors();
-
-            if( isset( $_GET[ 'tab' ] ) ) {
-                $active_tab = $_GET[ 'tab' ];
-            } // end if
-            ?>
-            <h2 class="nav-tab-wrapper">
-                <a href="?page=submenu_slug&tab=first_tab" class="nav-tab <?php echo $active_tab == 'multi_order' ? 'nav-tab-active' : ''; ?>">First Tab</a>
-                <a href="?page=submenu_slug&tab=second_tab" class="nav-tab <?php echo $active_tab == 'bulk_shipping' ? 'nav-tab-active' : ''; ?>">Second Tab</a>
-            </h2>
-
-            <form method="post" action="options.php">
-                <?php
-                if($active_tab == 'first_tab') {
-                    settings_fields( 'option_group1' );
-                    do_settings_sections( 'submenu_slug' );
-                }
-                elseif($active_tab == 'second_tab') {
-                    settings_fields( 'option_group2' );
-                    do_settings_sections( 'submenu_slug' );
-                }
-                //And so on...
-
-                submit_button();
-
-                ?>
-            </form>
-
-        </div><!-- /.wrap -->
-        <?php
 
     }
 
