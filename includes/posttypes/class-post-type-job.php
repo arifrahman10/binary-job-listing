@@ -1,8 +1,6 @@
 <?php
 namespace Binary_Job_Listing;
 
-use Binary_Job_Listing\Admin_Submenu\Settings;
-
 if (!defined('ABSPATH')) {
     exit;
 } // Exit if accessed directly
@@ -37,17 +35,11 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
             // Register the post type
             add_action('init', [$this, 'binary_job_listing_init'], 10);
 
-            // Admin set post columns
-            add_action('manage_edit-job_columns', [$this, 'binary_job_listing_set_column'], 12, 1);
-
             // Add Filter to redirect Archive Page Template
             add_filter('archive_template', [$this, 'get_binary_job_listing_archive_template'], 20);
 
             // Add Filter to redirect Single Page Template
             add_filter('single_template', [$this, 'get_binary_job_listing_single_template'], 20);
-
-            //
-            add_filter('post_row_actions', [$this, 'binary_job_listing_action_id_links'], 10, 2 );
 
         }
 
@@ -142,27 +134,6 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
                 )
             ));
 
-        }
-
-
-        public function binary_job_listing_set_column($column) {
-
-            $column = array_merge(
-                $column, array(
-                    'view_applicants' => esc_html__('Job Applications', 'binary-job-listing'),
-                )
-            );
-
-            return $column;
-
-        }
-
-        public function binary_job_listing_action_id_links( $actions, $post ) {
-
-            if ($post->post_type == 'job') {
-                $actions['duplicate'] = '<a href="#" title="" rel="permalink">Duplicate</a>';
-            }
-            return $actions;
         }
 
         // Job Archive Page Job Listing

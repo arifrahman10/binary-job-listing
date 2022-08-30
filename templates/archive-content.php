@@ -1,5 +1,4 @@
 <?php
-
 use Binary_Job_Listing\Helper;
 
 if (!defined('ABSPATH')) {

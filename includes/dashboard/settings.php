@@ -4,13 +4,12 @@ namespace Binary_Job_Listing\Admin_Submenu;
 
 class Settings {
 
-
     public function __construct() {
 
         // Register Submenu Page "Settings" for Job listing
         add_action('admin_menu', [$this, 'binary_job_listing_settings_init'], 5, 1);
 
-        //add_action('admin_init', [$this, 'binary_job_listing_settings_fields_register'], 10, 1);
+        //add_action('admin_init', 'job-settings');
 
     }
 
@@ -61,85 +60,34 @@ class Settings {
                 </a>
             </nav>
 
-            <div class="tab-content">
-                <?php switch($tab) :
-                    case 'general':
-                        echo 'General'; //Put your HTML here
-                        break;
-                    case 'tools':
-                        echo 'Tools';
-                        break;
-                    default:
-                        echo 'Default tab';
-                        break;
-                endswitch; ?>
-            </div>
+            <form action="./dashboard/options.php" method="POST">
+                echoksdfjklsdf
+                <?php
 
+                settings_fields( 'setting-group-1' );
+                do_settings_sections( 'my-menu-slug-1' );
+
+                if( $tab == 'general' ) {
+
+                    settings_fields( 'setting-group-1' );
+                    do_settings_sections( 'my-menu-slug-1' );
+
+                } elseif( $tab == 'tools' )  {
+
+                    settings_fields( 'setting-group-2' );
+                    do_settings_sections( 'my-menu-slug-2' );
+
+                }
+                ?>
+
+                <?php submit_button(); ?>
+            </form>
 
         </div><!-- /.wrap -->
         <?php
 
-    }
-
-
-
-    /**
-     * @Render Submenu "Settings"
-     * @return void
-     * @since 1.0.0
-     *
-     * @access public
-     */
-    public function binary_job_listing_settings_fields_register() {
-
-        // check user capabilities
-        if ( ! current_user_can( 'manage_options' ) ) {
-            return;
-        }
-
-        $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'first_tab';
-
-        if( isset( $_GET[ 'tab' ] ) ) {
-            $active_tab = $_GET[ 'tab' ];
-        } // end if
-
-        if ($active_tab == 'first_tab') {
-            register_setting('option_group1', 'option_name');
-            add_settings_field(
-                'first_tab_fields_slug',
-                'First Tab Fields Title',
-                'tab_fields_callback',
-                'submenu_slug',
-                'first_tab_section',
-            );
-            add_settings_section(
-                'first_tab_section',
-                'First Tab Titles',
-                'tab_fields_callback',
-                'submenu_slug',
-            );
-        }
-        elseif($active_tab == 'second_tab') {
-            register_setting('option_group2', 'option_name');
-            add_settings_field(
-                'second_tab_fields_slug',
-                'Second Tab Fields Title',
-                'tab_fields_callback',
-                'submenu_slug',
-                'second_tab_section',
-            );
-            add_settings_section(
-                'second_tab_section',
-                'Second Tab Titles',
-                'tab_fields_callback',
-                'submenu_slug',
-            );
-        }
-        //and so on...
-
 
     }
-
 
 }
 

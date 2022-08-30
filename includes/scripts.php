@@ -11,7 +11,6 @@ class Scripts {
 
     }
 
-
     //Scripts Enqueue
     public function binary_job_listing_enqueue_scripts() {
 

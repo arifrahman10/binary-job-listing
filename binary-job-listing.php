@@ -130,7 +130,6 @@ if ( !class_exists('Binary_Job_Listing') ) {
              */
             require_once BINARY_JOB_LISTING_DIR_PATH . 'includes/posttypes/class-post-type-job.php';
 
-
             /**
              * Job Post Type Dashboard "Settings" file's path
              */
@@ -141,12 +140,10 @@ if ( !class_exists('Binary_Job_Listing') ) {
              */
             require BINARY_JOB_LISTING_DIR_PATH . 'includes/scripts.php';
 
-
             /**
              * Binary Job Listing Helper Functions
              */
             require BINARY_JOB_LISTING_DIR_PATH . 'includes/helper-functions.php';
-
 
         }
 
