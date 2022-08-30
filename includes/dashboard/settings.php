@@ -60,8 +60,8 @@ class Settings {
                 </a>
             </nav>
 
-            <form action="./dashboard/options.php" method="POST">
-                echoksdfjklsdf
+
+            <form action="options.php" method="POST">
                 <?php
 
                 settings_fields( 'setting-group-1' );
@@ -69,13 +69,24 @@ class Settings {
 
                 if( $tab == 'general' ) {
 
-                    settings_fields( 'setting-group-1' );
-                    do_settings_sections( 'my-menu-slug-1' );
+                    ?>
+                    <label for="">
+                        Text:
+                        <input type="text">
+                    </label>
+                    <?php
 
                 } elseif( $tab == 'tools' )  {
 
-                    settings_fields( 'setting-group-2' );
-                    do_settings_sections( 'my-menu-slug-2' );
+                    ?>
+                    <tr>
+                        <th>Tags with CSS classes:</th>
+                        <td>
+                            <input id="ilc_tag_class" name="ilc_tag_class" type="text" value="true" />
+                            <label for="ilc_tag_class">Checking this will output each post tag with a specific CSS class based on its slug.</label>
+                        </td>
+                    </tr>
+                    <?php
 
                 }
                 ?>
