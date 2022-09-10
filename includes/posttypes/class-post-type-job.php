@@ -83,7 +83,6 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
                 'yarpp_support'         => true,
                 'menu_icon'             => 'dashicons-book',
                 'show_admin_column'     => true,
-
             );
 
             register_post_type('job', $args);
@@ -151,7 +150,6 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
             }
             return $single_template;
         }
-
 
     }
 }
