@@ -48,7 +48,7 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
 
             $labels = array(
                 'name'              => esc_html__( 'Jobs', 'binary-job-listing' ),
-                'singular_name'     => esc_html__( 'Job', 'binary-job-listing' ),
+                'singular_name'     => esc_html__( 'bjl_post', 'binary-job-listing' ),
                 'add_new'           => esc_html__( 'Add New', 'binary-job-listing' ),
                 'add_new_item'      => esc_html__( 'Add New Job', 'binary-job-listing' ),
                 'edit_item'         => esc_html__( 'Edit Job', 'binary-job-listing' ),
@@ -63,7 +63,7 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
                 'parent_item'       => esc_html__( 'Parent Job', 'binary-job-listing' ),
                 'parent_item_colon' => esc_html__( 'Parent Job:', 'binary-job-listing' ),
                 'update_item'       => esc_html__( 'Update Job', 'binary-job-listing' ),
-                'menu_name'         => esc_html__( 'Job', 'binary-job-listing' ),
+                'menu_name'         => esc_html__( 'Job Listings', 'binary-job-listing' ),
             );
 
             $args = array(
@@ -74,7 +74,7 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
                 'show_ui'               => true,
                 'show_in_menu'          => true,
                 'query_var'             => true,
-                'rewrite'               => array( 'slug' => 'job' ),
+                'rewrite'               => array( 'slug' => 'bjl_post' ),
                 'capability_type'       => 'post',
                 'has_archive'           => true,
                 'hierarchical'          => true,
@@ -85,15 +85,15 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
                 'show_admin_column'     => true,
             );
 
-            register_post_type('job', $args);
+            register_post_type('bjl_post', $args);// Register the post type
 
 
             /**
              * @since  1.0.0
              *
-             * Job Categories
+             * Binary Job Listing Categories (bjl_category)
              */
-            register_taxonomy('job-category', 'job', array(
+            register_taxonomy('bjl_category', 'bjl_post', array(
                 'public'                => true,
                 'hierarchical'          => true,
                 'show_admin_column'     => true,
@@ -106,9 +106,9 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
             /**
              * @since  1.0.0
              *
-             * Job Locations
+             * Binary Job Locations - (bjl_location)
              */
-            register_taxonomy('job-location', 'job', array(
+            register_taxonomy('bjl_location', 'bjl_post', array(
                 'public'                => true,
                 'hierarchical'          => true,
                 'show_admin_column'     => true,
@@ -121,9 +121,9 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
             /**
              * @since  1.0.0
              *
-             * Job Types
+             * Binary Job Types - (bjl_type)
              */
-            register_taxonomy('job-type', 'job', array(
+            register_taxonomy('bjl_type', 'bjl_post', array(
                 'public'                => true,
                 'hierarchical'          => true,
                 'show_admin_column'     => true,
@@ -137,7 +137,7 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
 
         // Job Archive Page Job Listing
         public function get_binary_job_listing_archive_template( $archive_template ){
-            if ( is_post_type_archive ( 'job' ) ) {
+            if ( is_post_type_archive ( 'bjl_post' ) ) {
                 $archive_template = BINARY_JOB_LISTING_DIR_PATH . 'templates/archive-content.php';
             }
             return $archive_template;
@@ -145,7 +145,7 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
 
         // Job Single Job Listing
         public function get_binary_job_listing_single_template($single_template) {
-            if ( is_singular('job') ) {
+            if ( is_singular('bjl_post') ) {
                 $single_template = BINARY_JOB_LISTING_DIR_PATH . '/templates/single-content.php';
             }
             return $single_template;

@@ -12,7 +12,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Binary Job Listing is the most powerful and incredibly feature-packed, advanced recruitment plugin that comes with gorgeous designs and has everything you need to create a popular job board that meets your expectations.
 
-= Key Features =
+== Key Features ==
 * Super Simple and Easy to Set Up and Use
 * Clean and User-Friendly Designs
 * Job Specifications
@@ -22,3 +22,13 @@ Binary Job Listing is the most powerful and incredibly feature-packed, advanced 
 == Installation ==
 1. Upload the plugin folder to the `/wp-content/plugins/` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the `Plugins` screen in WordPress
+
+
+== Changelog ==
+
+v1.0.1 - 16th Dec, 2022
+- Post Type slug changed to "bjl_post" from "job"
+
+
+v1.0.0 - 13th Sep, 2022
+- Initial Release

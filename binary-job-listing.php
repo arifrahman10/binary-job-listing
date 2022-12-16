@@ -3,10 +3,10 @@
  * Plugin Name: Binary Job Listing
  * Description: Binary Job Listing is a clean and simple plugin to manage job post and apply form on your WordPress site.
  * Author: Arif Rahman
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires at least: 5.0
- * Tested up to: 6.0.2
- * Requires PHP: 7.4
+ * Tested up to: 6.1.1
+ * Requires PHP: 7.3
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text domain: binary-job-listing
@@ -30,7 +30,7 @@ if ( !class_exists('Binary_Job_Listing') ) {
          *
          * @var string The plugin version.
          */
-        const version = '1.0.0';
+        const version = '1.0.1';
 
         private static $_instance = null;
 
