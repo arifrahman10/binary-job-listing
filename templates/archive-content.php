@@ -75,8 +75,8 @@ $job_post = new \WP_Query( $args );
                             'format' => '?paged=%#%',
                             'current' => max(1, get_query_var('paged')),
                             'total' => $job_post->max_num_pages,
-                            'next_text' => __('Next Page', 'rave-core'),
-                            'prev_text' => __('Previous Page', 'rave-core')
+                            'next_text' => __('Next Page', 'binary-job-listing'),
+                            'prev_text' => __('Previous Page', 'binary-job-listing')
                         ));
                         ?>
                     </div>

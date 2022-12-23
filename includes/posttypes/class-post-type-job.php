@@ -48,7 +48,7 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
 
             $labels = array(
                 'name'              => esc_html__( 'Jobs', 'binary-job-listing' ),
-                'singular_name'     => esc_html__( 'bjl_post', 'binary-job-listing' ),
+                'singular_name'     => esc_html__( 'Job', 'binary-job-listing' ),
                 'add_new'           => esc_html__( 'Add New', 'binary-job-listing' ),
                 'add_new_item'      => esc_html__( 'Add New Job', 'binary-job-listing' ),
                 'edit_item'         => esc_html__( 'Edit Job', 'binary-job-listing' ),
@@ -79,7 +79,7 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
                 'has_archive'           => true,
                 'hierarchical'          => true,
                 'menu_position'         => 8,
-                'supports'              => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', 'permalinks', 'page-attributes' ),
+                'supports'              => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields', 'permalinks', 'page-attributes' ),
                 'yarpp_support'         => true,
                 'menu_icon'             => 'dashicons-book',
                 'show_admin_column'     => true,

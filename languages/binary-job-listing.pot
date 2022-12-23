@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Binary Job Listing\n"
-"POT-Creation-Date: 2022-09-11 00:25+0600\n"
+"POT-Creation-Date: 2022-12-24 00:21+0600\n"
 "PO-Revision-Date: 2022-08-22 17:44+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: binary-job-listing.php\n"
@@ -22,12 +22,15 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 
+#: includes/admin/options/admin_options_meta.php:31
+msgid "Featured Post"
+msgstr ""
+
 #: includes/posttypes/class-post-type-job.php:50
 msgid "Jobs"
 msgstr ""
 
 #: includes/posttypes/class-post-type-job.php:51
-#: includes/posttypes/class-post-type-job.php:66
 msgid "Job"
 msgstr ""
 
@@ -85,6 +88,10 @@ msgstr ""
 
 #: includes/posttypes/class-post-type-job.php:65
 msgid "Update Job"
+msgstr ""
+
+#: includes/posttypes/class-post-type-job.php:66
+msgid "Job Listings"
 msgstr ""
 
 #: includes/posttypes/class-post-type-job.php:102
