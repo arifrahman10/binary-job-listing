@@ -3,7 +3,7 @@
  * Plugin Name: Binary Job Listing
  * Description: Binary Job Listing is a clean and simple plugin to manage job post and apply form on your WordPress site.
  * Author: Arif Rahman
- * Version: 1.0.2
+ * Version: 1.1.0
  * Requires at least: 5.0
  * Tested up to: 6.1.1
  * Requires PHP: 7.0
@@ -30,7 +30,7 @@ if ( !class_exists('Binary_Job_Listing') ) {
          *
          * @var string The plugin version.
          */
-        const version = '1.0.1';
+        const version = '1.0.3';
 
         private static $_instance = null;
 
@@ -133,18 +133,32 @@ if ( !class_exists('Binary_Job_Listing') ) {
             /**
              * Register Enqueue Scripts
              */
-            require BINARY_JOB_LISTING_DIR_PATH . 'includes/scripts.php';
+            require BINARY_JOB_LISTING_DIR_PATH . 'includes/classes/class-scripts.php';
 
             /**
              * Binary Job Listing Helper Functions
              */
-            require BINARY_JOB_LISTING_DIR_PATH . 'includes/helper-functions.php';
+            require BINARY_JOB_LISTING_DIR_PATH . 'includes/classes/class-helper-functions.php';
 
+	        /**
+	         * Binary Job Listing - Custom Page Template
+	         */
+            require BINARY_JOB_LISTING_DIR_PATH . 'includes/classes/class-templates.php';
 
 			/**
 			 * Binary Job Listing Admin Meta Options
 			 */
 	        require_once BINARY_JOB_LISTING_DIR_PATH . '/includes/admin/options/admin_options_meta.php';
+
+			/**
+			 * Register Sidebar's
+			 */
+	        require_once BINARY_JOB_LISTING_DIR_PATH . '/includes/sidebars.php';
+
+			/**
+			 * Register Sidebar's
+			 */
+	        require_once BINARY_JOB_LISTING_DIR_PATH . '/includes/extra.php';
 
         }
 

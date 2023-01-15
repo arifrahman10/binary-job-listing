@@ -9,17 +9,20 @@ get_header();
 
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = [
-    'post_type' => 'job',
+    'post_type' => 'bjl_post',
     'post_status' => 'publish',
     'posts_per_page' => 6,
 ];
 
 $job_post = new \WP_Query( $args );
+
+$job_sidebar = is_active_sidebar('bjl_job_sidebar') ? 'col-lg-8' : 'col-lg-12';
+
 ?>
     <section class="binary-job-archive job-listing">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="<?php echo esc_attr($job_sidebar) ?>">
                     <!---------------------- Start Binary Job Listing Archive list ------------------------>
                     <?php
                     while ($job_post->have_posts()) : $job_post->the_post();
@@ -82,6 +85,20 @@ $job_post = new \WP_Query( $args );
                     </div>
 
                 </div>
+                
+                <?php
+                // Job Sidebar Area
+                if ( !is_active_sidebar('bjl_job_sidebar') ) {
+                    return;
+                }
+                if ( is_active_sidebar('bjl_job_sidebar') ) { ?>
+                    <div class="col-lg-4">
+                        <?php dynamic_sidebar('bjl_job_sidebar'); ?>
+                    </div>
+                    <?php
+                }
+                ?>
+                
             </div>
         </div>
     </section>

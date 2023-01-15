@@ -41,6 +41,15 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
             // Add Filter to redirect Single Page Template
             add_filter('single_template', [$this, 'get_binary_job_listing_single_template'], 20);
 
+	        // Admin set post columns
+	        //add_filter( 'manage_edit-bjl_post_columns', [ $this, 'set_columns' ] );
+
+	        // Admin edit post columns
+	        //add_filter( 'manage_bjl_post_posts_custom_column', [ $this, 'edit_columns' ] );
+
+	        // Add Admin Page
+	        add_action( 'admin_menu', [ $this, 'add_admin_page' ]);
+
         }
 
         // Custom Post Type Register
@@ -135,6 +144,100 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
 
         }
 
+
+		// Admin set post columns
+        public function set_columns( $columns ) {
+			$columns = array(
+				'cb' => '<input type="checkbox" />',
+				'title' => esc_html__( 'Title', 'binary-job-listing' ),
+				'id' => esc_html__( 'ID', 'binary-job-listing' ),
+				'bjl_category' => esc_html__( 'Categories', 'binary-job-listing' ),
+				'bjl_location' => esc_html__( 'Locations', 'binary-job-listing' ),
+				'bjl_type' => esc_html__( 'Types', 'binary-job-listing' ),
+				'date' => esc_html__( 'Date', 'binary-job-listing' ),
+				'author' => esc_html__( 'Author', 'binary-job-listing' ),
+			);
+			return $columns;
+
+        }
+
+		// Admin edit post columns
+        public function edit_columns( $column ) {
+			global $post;
+			switch ( $column ) {
+				case 'bjl_category':
+					$terms = get_the_terms( $post->ID, 'bjl_category' );
+					if ( ! empty( $terms ) ) {
+						foreach ( $terms as $term ) {
+							$term_link = get_term_link( $term, 'bjl_category' );
+							if ( is_wp_error( $term_link ) ) {
+								continue;
+							}
+							echo '<a href="' . esc_url( $term_link ) . '">' . esc_html( $term->name ) . '</a><br>';
+						}
+					}
+					break;
+				case 'bjl_location':
+					$terms = get_the_terms( $post->ID, 'bjl_location' );
+					if ( ! empty( $terms ) ) {
+						foreach ( $terms as $term ) {
+							$term_link = get_term_link( $term, 'bjl_location' );
+							if ( is_wp_error( $term_link ) ) {
+								continue;
+							}
+							echo '<a href="' . esc_url( $term_link ) . '">' . esc_html( $term->name ) . '</a><br>';
+						}
+					}
+					break;
+				case 'bjl_type':
+					$terms = get_the_terms( $post->ID, 'bjl_type' );
+					if ( ! empty( $terms ) ) {
+						foreach ( $terms as $term ) {
+							$term_link = get_term_link( $term, 'bjl_type' );
+							if ( is_wp_error( $term_link ) ) {
+								continue;
+							}
+							echo '<a href="' . esc_url( $term_link ) . '">' . esc_html( $term->name ) . '</a><br>';
+						}
+					}
+					break;
+			}
+	    }
+
+
+		// Add Admin Submenu Page
+		public function add_admin_page() {
+
+			add_submenu_page(
+				'edit.php?post_type=bjl_post',
+				esc_html__( 'Settings', 'binary-job-listing' ),
+				esc_html__( 'Settings', 'binary-job-listing' ),
+				'manage_options',
+				'bjl-settings',
+				array( $this, 'add_submenu_page_html' )
+			);
+
+		}
+
+		public function add_submenu_page_html() {
+
+			// check user capabilities
+			if ( ! current_user_can( 'manage_options' ) ) {
+				return;
+			}
+
+			//Get the active tab from the $_GET param
+			$default_tab = null;
+			$tab = isset($_GET['tab']) ? $_GET['tab'] : $default_tab;
+
+			?>
+
+			<?php
+
+		}
+
+
+
         // Job Archive Page Job Listing
         public function get_binary_job_listing_archive_template( $archive_template ){
             if ( is_post_type_archive ( 'bjl_post' ) ) {
@@ -150,6 +253,8 @@ if (!class_exists('Binary_Job_Listing_Post_Type_Job')) {
             }
             return $single_template;
         }
+
+
 
     }
 }

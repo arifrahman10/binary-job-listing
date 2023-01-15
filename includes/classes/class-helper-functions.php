@@ -1,7 +1,6 @@
 <?php
 namespace Binary_Job_Listing;
 
-
 if (!defined('ABSPATH')) {
     exit;
 }

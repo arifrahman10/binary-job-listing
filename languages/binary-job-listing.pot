@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Binary Job Listing\n"
-"POT-Creation-Date: 2022-12-24 00:21+0600\n"
+"POT-Creation-Date: 2023-01-16 01:11+0600\n"
 "PO-Revision-Date: 2022-08-22 17:44+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: binary-job-listing.php\n"
@@ -26,96 +26,129 @@ msgstr ""
 msgid "Featured Post"
 msgstr ""
 
-#: includes/posttypes/class-post-type-job.php:50
-msgid "Jobs"
-msgstr ""
-
-#: includes/posttypes/class-post-type-job.php:51
-msgid "Job"
-msgstr ""
-
-#: includes/posttypes/class-post-type-job.php:52
-msgid "Add New"
-msgstr ""
-
-#: includes/posttypes/class-post-type-job.php:53
-msgid "Add New Job"
-msgstr ""
-
-#: includes/posttypes/class-post-type-job.php:54
-msgid "Edit Job"
-msgstr ""
-
-#: includes/posttypes/class-post-type-job.php:55
-msgid "New Job"
-msgstr ""
-
-#: includes/posttypes/class-post-type-job.php:56
-msgid "New Job Name"
-msgstr ""
-
-#: includes/posttypes/class-post-type-job.php:57
-msgid "All Jobs"
-msgstr ""
-
-#: includes/posttypes/class-post-type-job.php:58
-msgid "View Job"
+#. Plugin Name of the plugin/theme
+#: includes/classes/class-templates.php:53
+msgid "Binary Job Listing"
 msgstr ""
 
 #: includes/posttypes/class-post-type-job.php:59
-msgid "Views"
+msgid "Jobs"
 msgstr ""
 
 #: includes/posttypes/class-post-type-job.php:60
-msgid "Search Jobs"
+msgid "Job"
 msgstr ""
 
 #: includes/posttypes/class-post-type-job.php:61
-msgid "No jobs found"
+msgid "Add New"
 msgstr ""
 
 #: includes/posttypes/class-post-type-job.php:62
-msgid "No jobs found in Trash"
+msgid "Add New Job"
 msgstr ""
 
 #: includes/posttypes/class-post-type-job.php:63
-msgid "Parent Job"
+msgid "Edit Job"
 msgstr ""
 
 #: includes/posttypes/class-post-type-job.php:64
-msgid "Parent Job:"
+msgid "New Job"
 msgstr ""
 
 #: includes/posttypes/class-post-type-job.php:65
-msgid "Update Job"
+msgid "New Job Name"
 msgstr ""
 
 #: includes/posttypes/class-post-type-job.php:66
+msgid "All Jobs"
+msgstr ""
+
+#: includes/posttypes/class-post-type-job.php:67
+msgid "View Job"
+msgstr ""
+
+#: includes/posttypes/class-post-type-job.php:68
+msgid "Views"
+msgstr ""
+
+#: includes/posttypes/class-post-type-job.php:69
+msgid "Search Jobs"
+msgstr ""
+
+#: includes/posttypes/class-post-type-job.php:70
+msgid "No jobs found"
+msgstr ""
+
+#: includes/posttypes/class-post-type-job.php:71
+msgid "No jobs found in Trash"
+msgstr ""
+
+#: includes/posttypes/class-post-type-job.php:72
+msgid "Parent Job"
+msgstr ""
+
+#: includes/posttypes/class-post-type-job.php:73
+msgid "Parent Job:"
+msgstr ""
+
+#: includes/posttypes/class-post-type-job.php:74
+msgid "Update Job"
+msgstr ""
+
+#: includes/posttypes/class-post-type-job.php:75
 msgid "Job Listings"
 msgstr ""
 
-#: includes/posttypes/class-post-type-job.php:102
+#: includes/posttypes/class-post-type-job.php:111
+#: includes/posttypes/class-post-type-job.php:154
 msgid "Categories"
 msgstr ""
 
-#: includes/posttypes/class-post-type-job.php:117
+#: includes/posttypes/class-post-type-job.php:126
+#: includes/posttypes/class-post-type-job.php:155
 msgid "Locations"
 msgstr ""
 
-#: includes/posttypes/class-post-type-job.php:132
+#: includes/posttypes/class-post-type-job.php:141
+#: includes/posttypes/class-post-type-job.php:156
 msgid "Types"
 msgstr ""
 
-#: templates/archive-content.php:78
+#: includes/posttypes/class-post-type-job.php:152
+msgid "Title"
+msgstr ""
+
+#: includes/posttypes/class-post-type-job.php:153
+msgid "ID"
+msgstr ""
+
+#: includes/posttypes/class-post-type-job.php:157
+msgid "Date"
+msgstr ""
+
+#: includes/posttypes/class-post-type-job.php:158
+msgid "Author"
+msgstr ""
+
+#: includes/posttypes/class-post-type-job.php:213
+#: includes/posttypes/class-post-type-job.php:214
+msgid "Settings"
+msgstr ""
+
+#: includes/sidebars.php:9
+msgid "Job Sidebar"
+msgstr ""
+
+#: includes/sidebars.php:10
+msgid "Add widgets here for the Right Sidebar of the Doc pages"
+msgstr ""
+
+#: templates/archive-content.php:81
 msgid "Next Page"
 msgstr ""
 
-#: templates/archive-content.php:79
+#: templates/archive-content.php:82
 msgid "Previous Page"
-msgstr ""
-
-#. Plugin Name of the plugin/theme
-msgid "Binary Job Listing"
 msgstr ""
 
 #. Description of the plugin/theme
